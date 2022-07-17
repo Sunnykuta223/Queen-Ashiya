@@ -1,0 +1,66 @@
+BOTÓN BUG CALL FIX by DҽɱσɳYT ✔️
+
+Metodo by (Amir.6ix)
+
+buscar por string: "MessageUtil/removePadding/ axolotl derived plaintext has invalid padding"
+
+buscar dentro del primer resultado: arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+________________________________________________
+    pegar abajo de ".registers"
+
+    invoke-static {}, Lcom/app/settings/privacy/PrivacySettings;->BugCall()Z
+
+    move-result vX
+
+    if-eqz vX, :cond_1e
+    
+    ____________________________
+    colocar en medio de las lineas duplicadas:
+    
+    goto :goto_37
+
+    :cond_1e
+    
+    ________________________
+    pegar debajo del (arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V) que fue duplicado:
+    
+    const/4 vX, 0x1
+
+    goto :goto_33
+
+    :goto_33
+    
+    ________________________
+    pegar arriba de "return object v1"
+    
+    :goto_37
+    
+________________________________________________
+
+.method public static BugCall()Z
+    .registers 1
+
+    const-string v0, "BugCall"
+
+    invoke-static {v0}, Lcom/app/base/WaResources;->A0B(Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+________________________________________________
+
+Añadir a privacy.xml:
+
+    <SwitchPreference
+        android:title="Bug Call Crash"
+        android:key="BugCall"
+        android:summaryOn="Desactivado ❌"
+        android:summaryOff="Activado ✔️"
+        android:defaultValue="false" />
+        
+        
+(EL BOTÓN FUNCIONA CUANDO ESTÁ DESACTIVADO) 
+
+CUANDO LO ACTIVAS SIMPLEMENTE VAS A PODER REALIZAR LAS LLAMADAS COMO SIEMPRE Y NO LE DARA CRASH A LA PERSONA A QUIEN LLAMASTE, EN CAMBIO CUANDO ESTA DESACTIVADO, AL LLAMAR A ALGUIEN, LE DARA CRASH!!!
